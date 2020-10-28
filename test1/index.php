@@ -1,4 +1,5 @@
 <?php
+
 // это фронт контроллер 
 
 // общие настройки 
@@ -9,6 +10,7 @@ error_reporting(E_ALL);
 // подключение файлов
 
 define('ROOT', dirname(__FILE__));
+
 require_once(ROOT.'/components/Router.php');
 
 // bd connection 

@@ -24,7 +24,7 @@ class Router {
                 $internalPath = preg_replace("~$uriPattern~", $path, $uri);
                 //определить какой контроллер и экшн обрабатывают запрос 
                 $segments = explode('/', $internalPath);
-                $controllerName = ucfirst(array_shift($segments)).'Controller';
+                $controllerName = ucfirst(array_shift($segments)).'Controller';  
                 $actionName = 'action'.ucfirst(array_shift($segments));
                 $parameters = $segments;
             endif;
@@ -49,4 +49,3 @@ class Router {
         
     }
 }
-

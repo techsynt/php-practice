@@ -14,4 +14,3 @@ class Db {
         return $db;
     }
 }
-
