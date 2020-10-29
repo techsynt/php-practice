@@ -1,7 +1,7 @@
 <?php
 
 class Product {
-    const SHOW_BY_DEFAULT = 10;
+    const SHOW_BY_DEFAULT = 2;
 
     public static function getLatestProducts($count = self::SHOW_BY_DEFAULT){
         $count = intval($count);
@@ -21,11 +21,19 @@ class Product {
         endwhile;
     return $categoryList;    
     }
-    public static function getProductsListByCategory($categoryId = false){
+    public static function getProductsListByCategory($categoryId = false, $page = 1){
+        $page = intval($page);
+        $offset = ($page -1) * self::SHOW_BY_DEFAULT;
         if($categoryId):
         $db = Db::getConnection();
         $productsList = array();
-        $result = $db->query('SELECT id, name, price, image, description, is_new FROM lesson11_db.product WHERE status = 1 AND category_id ='.$categoryId);
+//        $result = $db->query('SELECT id, name, price, image, description, is_new FROM lesson11_db.product WHERE status = 1 AND category_id ='.$categoryId.' OFFSET '.$offcet);
+
+        $result = $db->query("SELECT id, name, price, image, description, is_new FROM lesson11_db.product "
+        . "WHERE status = '1' AND category_id = '$categoryId' "
+        . "ORDER BY id ASC "                
+        . "LIMIT ".self::SHOW_BY_DEFAULT
+        . ' OFFSET '. $offset);
         $i = 0 ;
         while ($row = $result->fetch()):
             $productsList[$i]['id'] = $row['id'];
@@ -45,5 +53,14 @@ class Product {
         $result = $db->query('SELECT * FROM lesson11_db.product WHERE id =' . $id);
         $result->setFetchMode(PDO::FETCH_ASSOC);
         return $result->fetch();
+    }
+       public static function getTotalProductsInCategory($categoryId) {
+
+        $db =Db::getConnection();
+        $result = $db->query('SELECT count(id) AS count FROM lesson11_db.product '
+                . 'WHERE status="1" AND category_id ="'.$categoryId.'"');        
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $row =  $result->fetch();
+        return $row['count'];
     }
 }

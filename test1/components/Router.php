@@ -27,6 +27,7 @@ class Router {
                 $controllerName = ucfirst(array_shift($segments)).'Controller';  
                 $actionName = 'action'.ucfirst(array_shift($segments));
                 $parameters = $segments;
+                break;
             endif;
         endforeach;
         

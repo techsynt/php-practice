@@ -38,13 +38,13 @@
                                             <h2><?php echo $product['price']?> баксов</h2>
                                             <p><?php echo $product['description'];?></p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-                                            //
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <?php endforeach;?> 
-                            
+                            <!--постраничная навигация-->
+                            <?php echo $pagination->get(); ?>
                                     </div>
                                 </div>
                                		
