@@ -33,7 +33,7 @@
                             <div class="contactinfo">
                                 <ul class="nav nav-pills">
                                     <li><a href="#"><i class="fa fa-phone"></i> +38 093 000 11 22</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> zinchenko.us@gmail.com</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> Lorsanov M.</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -61,8 +61,15 @@
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">                                    
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
+                                    
+                                    
+                                    <li><a href="/cabinet/"><i class="fa fa-user"></i> Кабинет</a></li>
+                                    <?php if(User::isGuest()): ?>
+                                    <li><a href="/user/login"><i class="fa fa-lock"></i> Вход</a></li>
+                                    <?php else: ?>
+                                    <li><a href="/user/logout/"><i class="fa fa-unlock"></i> Выход</a></li>
                                     <li><a href="#"><i class="fa fa-user"></i> Аккаунт</a></li>
-                                    <li><a href="#"><i class="fa fa-lock"></i> Вход</a></li>
+                                    <?php endif;?>
                                 </ul>
                             </div>
                         </div>

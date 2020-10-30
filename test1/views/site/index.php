@@ -38,9 +38,9 @@
                                             <h2><?php echo $product['price']?> баксов</h2>
                                             <p><?php echo $product['description'];?></p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-                                            <?php if($product['is_new']):?>
+                                            <!--<?php if($product['is_new']):?>
                                             <img src="/template/images/home/new.png" class="new" alt="">
-                                            <?php endif;?>
+                                            <?php endif;?>-->
                                         </div>
                                     </div>
                                 </div>
