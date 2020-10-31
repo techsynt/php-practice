@@ -10,6 +10,9 @@ return array(
     'user/login' => 'user/login',
     'cabinet' => 'cabinet/index',
     'cabinet/edit' => 'cabinet/edit',
+    'cart/add/([0-9]+)' => 'cart/add/$1', // actionAdd в CartController
+    'cart/addAjax/([0-9]+)' => 'cart/addAjax/$1', // actionAdd в CartController
+    'cart' => 'cart/index', // actionIndex в CartController
     '' => 'site/index',  //site controller action index
 );
 

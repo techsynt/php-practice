@@ -60,7 +60,11 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">                                    
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
+                                    <li><a href="/cart/index/">
+                                            <i class="fa fa-shopping-cart"></i> Корзина
+                                            <span id='cart-count'>
+                                                (<?php echo Cart::countItems();?>)
+                                            </span></a></li>
                                     
                                     
                                     <li><a href="/cabinet/"><i class="fa fa-user"></i> Кабинет</a></li>

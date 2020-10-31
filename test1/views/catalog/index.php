@@ -37,7 +37,7 @@
                                             <a href="/product/<?php echo $product['id'];?>"><img src="/template/images/home/product1.jpg" alt="" /></a>
                                             <h2><?php echo $product['price']?> баксов</h2>
                                             <p><?php echo $product['description'];?></p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                            <a href="/cart/add/<?php echo $product['id'];?>" data-id="<?php echo $product['id']; ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                             <?php if($product['is_new']):?>
                                             <img src="/template/images/home/new.png" class="new" alt="">
                                             <?php endif;?>
