@@ -23,6 +23,13 @@ class User {
             return false;
         endif;
     }
+        public static function checkPhone($phone)
+    {
+        if (strlen($phone) >= 10) {
+            return true;
+        }
+        return false;
+    }
     
     public static function checkEmailExist($email){
         $db = Db::getConnection();
